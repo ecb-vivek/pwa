@@ -1,7 +1,7 @@
 {
     "name": "first PWA example",
     "short_name": "first PWA example",
-    "start_url": "",
+    "start_url": "index",
     "scope":"./",
     "background_color": "#6dcdb1",
     "theme_color": "#009578",
