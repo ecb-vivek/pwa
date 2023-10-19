@@ -7,10 +7,10 @@ self.addEventListener("install", e => {
     );
 });
 
-self.addEventListener("push", function(event){
-    if(event.data){
-        console.log("yes");
-    }else{
-        console.log("not");
-    }
-})
+// self.addEventListener("fetch", e => {
+//     e.respondWith((async () => {
+//         const resource = await caches.match(e.request);
+//         return resource || fetch(e.request);
+//     })());
+// });
+
