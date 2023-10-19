@@ -7,3 +7,5 @@ if ("serviceWorker" in navigator) {
         console.log(err);
     });
 }
+
+const button = document.querySelector("button");
