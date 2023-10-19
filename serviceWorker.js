@@ -8,5 +8,9 @@ self.addEventListener("install", e => {
 });
 
 self.addEventListener("fetch", e => {
-    
-})
+    e.respondWith((async () => {
+        const resource = await caches.match(e.request);
+        return resource || fetch(e.request);
+    })());
+});
+
