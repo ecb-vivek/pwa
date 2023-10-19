@@ -13,7 +13,7 @@ const button = document.querySelector("button");
 button.addEventListener("click", () => {
     Notification.requestPermission().then(res => {
         if (res === "granted") {
-            const notify = new Notification("First Notification", {
+            const notify = new Notification("pwa Notification", {
                 body: "Hello Notification",
                 icon: "images/first.png",
                 tag: "first"
