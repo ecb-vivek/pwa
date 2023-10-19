@@ -9,7 +9,6 @@ if ("serviceWorker" in navigator) {
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
-    debugger;
     Notification.requestPermission().then(res => {
         if (res === "granted") {
             const notify = new Notification("pwa Notification", {
