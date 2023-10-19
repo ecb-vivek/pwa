@@ -7,3 +7,10 @@ self.addEventListener("install", e => {
     );
 });
 
+self.addEventListener("push", function(event){
+    if(event.data){
+        console.log("yes");
+    }else{
+        console.log("not");
+    }
+})
