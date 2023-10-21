@@ -13,7 +13,7 @@ button.addEventListener("click", () => {
         if (res === "granted") {
             const notify = new Notification("pwa Notification", {
                 body: "Hello Notification",
-                icon: "images/first.png",
+                icon: "images/second.png",
                 tag: "first"
             });
         } else {
