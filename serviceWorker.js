@@ -7,10 +7,11 @@ self.addEventListener("install", e => {
     // );
 });
 
-// self.addEventListener("fetch", e => {
-//     e.respondWith((async () => {
-//         const resource = await caches.match(e.request);
-//         return resource || fetch(e.request);
-//     })());
-// });
-
+self.addEventListener('push', e => {
+    const data = e.data.json();
+    self.registration.showNotification(data.title, {
+        body: data.body,
+        icon: 'images/first.png',
+        tag: 'push-notification'
+    })
+})
