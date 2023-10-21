@@ -10,7 +10,7 @@ if ("serviceWorker" in navigator) {
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
-    var N = new Notification(data.Title,{
+    var N = new Notification("Hello Notification",{
         body: "Hello Notification",
         icon: "images/second.png",
         badge:"images/second.png",
