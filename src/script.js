@@ -14,10 +14,12 @@ button.addEventListener("click", () => {
             const notify = new Notification("PWA Notification", {
                 body: "Hello Notification",
                 icon: "images/second.png",
+                badge:"images/second.png",
                 tag: "first"
             });
         } else {
+            alert("permission denied");
             console.log("permission denied");
         }
-    })
+    }).catch((ex)=>{ alert("error");alert("ex -"+ex)})
 })
