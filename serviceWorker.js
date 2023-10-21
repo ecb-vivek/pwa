@@ -7,18 +7,20 @@ self.addEventListener("install", e => {
     // );
 });
 
-var NotificationGlobal = function (data) {
-    Notification.requestPermission().then(res => {
-        if (res === "granted") {
-            self.registration.showNotification(data.Title, {
-                body: "Hello Notification",
-                icon: "images/second.png",
-                badge:"images/second.png",
-                tag: "first"
-            });
-        } else {
-            alert("permission denied");
-            console.log("permission denied");
-        }
-    }).catch((ex)=>{ alert("error");alert("ex -"+ex)})
-}
+self.addEventListener('push', (event) => {
+   try{
+            try{
+            event.waitUntil(self.registration.showNotification("Hello Notification"));
+            }catch(ex){  alert("error1");alert("ex -"+ex);}
+           
+
+             try{
+            event.waitUntil(self.registration.showNotification(event.title,{body:event.body}));
+            }catch(ex){  alert("error2");alert("ex -"+ex);}
+           
+       
+    }catch(ex){
+        alert("error");alert("ex -"+ex);
+    }
+//    }).catch((ex)=>{ })
+});

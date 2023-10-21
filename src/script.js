@@ -1,5 +1,6 @@
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("serviceWorker.js").then(registration => {
+    navigator.serviceWorker.register("serviceWorker.js").then(async registration => {
+       await Notification.requestPermission();
         console.log("service worker Register.", registration);
     }).catch(err => {
         console.log("service worker failed", err);
@@ -9,5 +10,10 @@ if ("serviceWorker" in navigator) {
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
-    NotificationGlobal({Title:"PWA Notification"});
+    var N = new Notification(data.Title,{
+        body: "Hello Notification",
+        icon: "images/second.png",
+        badge:"images/second.png",
+        tag: "first"
+    });
 })
