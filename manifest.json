@@ -2,20 +2,21 @@
     "name": "first PWA example",
     "short_name": "first PWA example",
     "start_url": "index",
-    "scope":"./",
+    "scope": "./",
     "background_color": "#6dcdb1",
     "theme_color": "#009578",
     "display": "standalone",
-    "icons":[
+    "icons": [
         {
-            "src":"images/first.png",
-            "sizes":"192x192",
-            "type":"image/png"
+            "src": "images/first.png",
+            "sizes": "192x192",
+            "type": "image/png"
         },
         {
-            "src":"images/second.png",
-            "sizes":"512x512",
-            "type":"image/png"
+            "src": "images/second.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
-    ]
+    ],
+    "gcm_sender_id": "your_sender_id"
 }
