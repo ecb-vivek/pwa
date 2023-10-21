@@ -7,16 +7,18 @@ self.addEventListener("install", e => {
     // );
 });
 
-self.addEventListener('push', e => {
-    const data = e.data.json();
-    self.registration.showNotification("PWA Notification", {
-        body: {
-            body: "Hello Notification",
-            icon: "images/second.png",
-            badge:"images/second.png",
-            tag: "first"
-        },
-        icon: 'images/second.png',
-        tag: 'push-notification'
-    })
-})
+var NotificationGlobal = function (data) {
+    Notification.requestPermission().then(res => {
+        if (res === "granted") {
+            self.registration.showNotification(data.Title, {
+                body: "Hello Notification",
+                icon: "images/second.png",
+                badge:"images/second.png",
+                tag: "first"
+            });
+        } else {
+            alert("permission denied");
+            console.log("permission denied");
+        }
+    }).catch((ex)=>{ alert("error");alert("ex -"+ex)})
+}

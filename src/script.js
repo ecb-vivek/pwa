@@ -9,17 +9,5 @@ if ("serviceWorker" in navigator) {
 const button = document.querySelector("button");
 
 button.addEventListener("click", () => {
-    Notification.requestPermission().then(res => {
-        if (res === "granted") {
-            const notify = new Notification("PWA Notification", {
-                body: "Hello Notification",
-                icon: "images/second.png",
-                badge:"images/second.png",
-                tag: "first"
-            });
-        } else {
-            alert("permission denied");
-            console.log("permission denied");
-        }
-    }).catch((ex)=>{ alert("error");alert("ex -"+ex)})
+    NotificationGlobal({Title:"PWA Notification"});
 })
