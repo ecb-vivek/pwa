@@ -8,19 +8,17 @@ self.addEventListener("install", e => {
 });
 
 self.addEventListener('push', (event) => {
-   try{
-            try{
+    try {
+        try {
             event.waitUntil(self.registration.showNotification("Hello Notification"));
-            }catch(ex){  alert("error1");alert("ex -"+ex);}
-           
+        } catch (ex) { alert("error1"); alert("ex -" + ex); }
 
-             try{
-            event.waitUntil(self.registration.showNotification(event.title,{body:event.body}));
-            }catch(ex){  alert("error2");alert("ex -"+ex);}
-           
-       
-    }catch(ex){
-        alert("error");alert("ex -"+ex);
+        try {
+            event.waitUntil(self.registration.showNotification(event.title, { body: event.body }));
+        } catch (ex) { alert("error2"); alert("ex -" + ex); }
+
+    } catch (ex) {
+        alert("error"); alert("ex -" + ex);
     }
-//    }).catch((ex)=>{ })
+    //    }).catch((ex)=>{ })
 });
